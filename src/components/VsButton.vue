@@ -1,7 +1,6 @@
 <template>
   <button
     id="button"
-    :class="className"
     :style="cssVars"
     @click="$emit('click', $event)">
       <slot>Submit</slot>
@@ -31,10 +30,6 @@ export default {
         type: String,
         default: '20%'
       },
-      className: {
-        type: String,
-        default: 'button'
-      }
     },
     computed: {
       cssVars() {
@@ -69,13 +64,11 @@ export default {
   --alpha: 0.8;
 }
 
-.button {
+button {
   padding: 10px 15px;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
   line-height: 1.25;
-  background: var(--bg-color);
   text-decoration: none;
-  color: var(--fg-color);
   font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -84,6 +77,8 @@ export default {
   overflow: hidden;
   border: none;
   border-radius: var(--radius);
+  height: var(--height);
+  width: var(--width);
   &:after {
     content: "";
     position: absolute;
@@ -96,15 +91,20 @@ export default {
     border-radius: 100%;
     transition: width 0.3s ease, height 0.3s ease;
   }
+}
+.btn-fill {
+  background: var(--bg-color);
+  color: var(--fg-color);
   &:focus, &:hover {
     background: rgba(var(--light-color), 0.8);
   }
 }
-.button:active:after {
-  width: 300px;
-  height: 300px;
-}
+
 .btn-outline {
+  background: white;
+  color: var(--fg-color);
+  border: 2px solid var(--fg-color);
+  font-weight: bold;
   &:hover, &:focus {
     box-shadow: inset 0 0 0 2em var(--hover);
   }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vs-button width=200 height=50 color="#ffffff" bgColor="#000000" radius="5">sample</vs-button>
+    <vs-button class="btn-outline" width=200 height=50 color="#316cad" radius="5">sample</vs-button>
   </div>
 </template>
 
