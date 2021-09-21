@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vs-button class="btn-outline" width=200 height=50 color="#316cad" radius="5">sample</vs-button>
+    <vs-button class="btn-outline success" width=200 height=50 color="#316cad" radius="5">sample</vs-button>
   </div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
 </script>
 
 <style>
+@import './styles/main.scss';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

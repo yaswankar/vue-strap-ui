@@ -1,6 +1,7 @@
 <template>
   <button
     id="button"
+    class="btn"
     :style="cssVars"
     @click="$emit('click', $event)">
       <slot>Submit</slot>
@@ -38,7 +39,8 @@ export default {
           '--fg-color': this.color,
           '--width': `${this.width}px`,
           '--height': `${this.height}px`,
-          '--light-color': this.convertToRGB(this.bgColor),
+          '--light-bg-color': this.convertToRGB(this.bgColor),
+          '--light-fg-color': this.convertToRGB(this.color),
           '--radius': `${this.radius}px`
         }
       },
@@ -74,6 +76,9 @@ button {
   border-radius: var(--radius);
   height: var(--height);
   width: var(--width);
+  &:hover {
+    cursor: pointer;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -91,7 +96,7 @@ button {
   background: var(--bg-color);
   color: var(--fg-color);
   &:focus, &:hover {
-    background: rgba(var(--light-color), 0.8);
+    background: rgba(var(--light-bg-color), 0.8);
   }
 }
 
@@ -100,8 +105,63 @@ button {
   color: var(--fg-color);
   border: 2px solid var(--fg-color);
   font-weight: bold;
-  &:hover, &:focus {
-    box-shadow: inset 0 0 0 2em var(--hover);
+  &:focus, &:hover {
+    background: rgb(var(--light-bg-color));
+    color: #ffffff;
+  }
+}
+
+// type - success
+.btn-fill.success {
+  background: var(--success);
+  color: white;
+  &:focus, &:hover {
+    background: rgba(10, 192, 80, 0.8);
+  }
+}
+.btn-outline.success {
+  background: white;
+  color: var(--success);
+  border: 2px solid var(--success);
+  &:focus, &:hover {
+    background: rgb(10, 192, 80);
+    color: #ffffff;
+  }
+}
+
+//type - danger
+.btn-fill.danger {
+  background: var(--danger);
+  color: white;
+  &:focus, &:hover {
+    background: rgba(252, 94, 88, 0.8);
+  }
+}
+.btn-outline.danger {
+  background: white;
+  color: var(--danger);
+  border: 2px solid var(--danger);
+  &:focus, &:hover {
+    background: rgb(252, 94, 88);
+    color: #ffffff;
+  }
+}
+
+//type - medium
+.btn-fill.medium {
+  background: var(--medium);
+  color: white;
+  &:focus, &:hover {
+    background: rgba(96, 105, 112, 0.8);
+  }
+}
+.btn-outline.medium {
+  background: white;
+  color: var(--medium);
+  border: 2px solid var(--medium);
+  &:focus, &:hover {
+    background: rgb(96, 105, 112);
+    color: #ffffff;
   }
 }
 </style>
