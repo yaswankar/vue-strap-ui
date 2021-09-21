@@ -59,11 +59,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-:root {
-  --color: 255, 0, 0;
-  --alpha: 0.8;
-}
-
 button {
   padding: 10px 15px;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
