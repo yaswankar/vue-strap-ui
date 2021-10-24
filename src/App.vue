@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <vs-button class="btn-outline success" width=200 height=50 color="#316cad" radius="5">sample</vs-button>
+    <!-- <vs-button class="btn-outline success" width=200 height=50 color="#316cad" radius="5">sample</vs-button> -->
+    <Demo />
   </div>
 </template>
 
 <script>
-import VsButton from './components/VsButton'
+import Demo from './components/Demo'
 export default {
   name: 'App',
   components: {
-    VsButton
+    Demo
   }
 }
 </script>
